@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">constraintLayoutTest</string>
+    <string name="str_edit_email">E-mail@maver.com</string>
+    <string name="str_edit_pw">Password</string>
+    <string name="str_butt_reg">Register</string>
+    <string name="str_butt_login">LogIn</string>
+    <string name="str_butt_forgot">I forgot PW</string>
 </resources>
