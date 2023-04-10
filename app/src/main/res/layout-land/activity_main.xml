@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <ImageView
         android:id="@+id/image_kakao"
         android:layout_width="0dp"
         android:layout_height="100dp"
-        android:src="@drawable/ic_logo_kakao"/>
+        android:src="@drawable/ic_logo_kakao"
+        app:layout_constraintBottom_toTopOf="@id/edit_email"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_chainStyle="spread"/>
+
     <EditText
         android:id="@+id/edit_email"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:hint="@string/str_edit_email"
         android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/image_kakao"
         app:layout_constraintBottom_toTopOf="@id/edit_pw"
         app:layout_constraintEnd_toStartOf="@id/butt_login"
         app:layout_constraintEnd_toEndOf="@id/edit_pw"
@@ -26,39 +36,44 @@
         android:layout_height="60dp"
         android:hint="@string/str_edit_pw"
         android:inputType="textPassword"
+        android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@id/edit_email"
         app:layout_constraintEnd_toStartOf="@id/butt_login"
-        app:layout_constraintStart_toEndOf="@id/image_kakao"
         app:layout_constraintBottom_toTopOf="@id/butt_reg"
         app:layout_constraintEnd_toEndOf="@id/edit_email"
-        app:layout_constraintStart_toStartOf="@id/edit_email"/>
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <Button
         android:id="@+id/butt_login"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="0dp"
         android:text="@string/str_butt_login"
         android:textColor="@color/warm_white"
-        app:layout_constraintStart_toEndOf="@id/edit_pw"/>
+        app:layout_constraintStart_toEndOf="@id/edit_pw"
+        app:layout_constraintTop_toTopOf="@id/edit_email"
+        app:layout_constraintBottom_toBottomOf="@id/edit_pw"
+        app:layout_constraintEnd_toEndOf="parent"/>
     <Button
         android:id="@+id/butt_reg"
-        android:layout_width="0dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/str_butt_reg"
         android:textColor="@color/warm_white"
-        app:layout_constraintTop_toBottomOf="@id/edit_pw"
+        app:layout_constraintTop_toBottomOf="@id/butt_login"
         app:layout_constraintBottom_toTopOf="@id/butt_forgot"
         app:layout_constraintStart_toStartOf="@id/edit_pw"
         app:layout_constraintEnd_toEndOf="@id/edit_pw"
         />
+
     <Button
         android:id="@+id/butt_forgot"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/str_butt_forgot"
         android:textColor="@color/warm_white"
-        app:layout_constraintTop_toBottomOf="@id/butt_reg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/butt_reg"
         app:layout_constraintStart_toStartOf="@id/butt_reg"
-        app:layout_constraintEnd_toEndOf="@id/butt_reg"/>
+        app:layout_constraintTop_toBottomOf="@id/butt_reg"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
